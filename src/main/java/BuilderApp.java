@@ -1,6 +1,6 @@
 public class BuilderApp {
     public static void main(String[] args) {
-        BuilderService service = new BuilderService();
-        service.htmlAppRun("repository url paraméter", args);
+        BuilderRun run = new BuilderRun();
+        run.htmlAppRun("https://github.com/GaborOrban86/html-builder.git", args);
     }
 }
