@@ -1,3 +1,16 @@
 BuilderRun.class
-BuilderService.class
+elements\Head.class
 BuilderApp.class
+elements\A.class
+BuilderService.class
+elements\H1.class
+elements\MainElement.class
+elements\Element.class
+elements\Body.class
+EveryThingToRun.class
+elements\Title.class
+elements\Tr.class
+elements\Html.class
+elements\P.class
+elements\Table.class
+elements\Td.class

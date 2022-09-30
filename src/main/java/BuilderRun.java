@@ -1,12 +1,15 @@
+import elements.Html;
+
 import java.util.Scanner;
 
 public class BuilderRun {
 
     Scanner scanner = new Scanner(System.in);
+    EveryThingToRun everyThingToRun = new EveryThingToRun();
     BuilderService service = new BuilderService();
 
     public void htmlAppRun(String repository, String[] arr) {
-        service.setRepositoryUrl(repository);
+
         int choose;
         String element;
         boolean button = false;
@@ -19,7 +22,8 @@ public class BuilderRun {
             arr[1] = scanner.nextLine();
         }
 
-        service.htmlStringMaker(arr);
+        Html finalHtml = everyThingToRun.setEverything(repository, arr);
+        service.setHtmlString(finalHtml.toString());
         System.out.println("Html fájl létrehozva!");
 
         do {
@@ -36,16 +40,16 @@ public class BuilderRun {
                     if (!service.getElements().contains(element)) {
                         System.out.println("Rossz bemenet!");
                     } else {
-                        service.deleteLines(service.getHtml(), element);
+                        service.deleteHtmlElements(everyThingToRun.getFinalHtml(), element);
                         button = true;
                         System.out.println("Html fájl sikeresen létrehozva az alábbi tartalommal:");
-                        service.htmlFileMaker(service.getHtml());
+                        service.htmlFileMaker(service.getHtmlString());
                     }
                     break;
                 case 2:
                     button = true;
                     System.out.println("Html fájl sikeresen létrehozva az alábbi tartalommal:");
-                    service.htmlFileMaker(service.getHtml());
+                    service.htmlFileMaker(service.getHtmlString());
                     break;
                 default:
                     System.out.println("Rossz bemenet!");
